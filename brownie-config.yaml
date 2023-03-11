@@ -1,0 +1,24 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+dotenv: .env
+networks:
+  default: development
+  mainnet-fork-dev:
+    eth_usd_price_feed: '0xaEA2808407B7319A31A383B6F8B60f04BCa23cE2'
+    verify: False
+  sepolia:
+    eth_usd_price_feed: '0x694AA1769357215DE4FAC081bf1f309aDC325306'
+    verify: True
+  goerli:
+    eth_usd_price_feed: '0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e'
+    verify: True
+  ganache-local:
+    verify: False
+  development:
+    verify: False
+wallets:
+  from_key: ${PRIVATE_KEY}
